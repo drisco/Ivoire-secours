@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     android:src="@drawable/frame_f"
-    tools:context=".MedicalFiles">
+    tools:context=".PersonFiles">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -49,39 +49,21 @@
                 android:id="@+id/relativeLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/dashboard"
-                android:gravity="center">
+                android:background="@drawable/dashboard">
 
-                <LinearLayout
-                    android:id="@+id/linear"
+                <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/logo" />
-
-                    <TextView
-                        android:id="@+id/appdesc"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/qr"
-                        android:textColor="@color/blue"
-                        android:textSize="8sp"
-                        android:textStyle="bold"
-                        tools:ignore="SmallSp" />
-
-                </LinearLayout>
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/logo" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
                     android:gravity="center"
                     android:orientation="horizontal">
 
@@ -189,6 +171,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
+                        android:visibility="invisible"
                         android:src="@drawable/trait" />
 
                 </LinearLayout>
@@ -239,7 +222,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:src="@drawable/trait"
-                        android:visibility="invisible" />
+                        android:visibility="visible" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -256,7 +239,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginStart="2dp"
-                android:layout_marginEnd="-20dp">
+                android:layout_marginEnd="2dp">
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -283,296 +266,545 @@
                         <ScrollView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
-
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
                                 android:layout_marginTop="20dp"
-                                android:layout_marginStart="20dp">
+                                android:layout_marginStart="5dp"
+                                android:layout_marginEnd="7dp">
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:orientation="vertical">
 
                                     <LinearLayout
-                                        android:id="@+id/type"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_horizontal"
+                                        android:orientation="horizontal">
+                                        <LinearLayout
+                                            android:id="@+id/reg"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical">
+
+                                            <TextView
+                                                android:id="@+id/prenomtxt"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:text="@string/prenom"
+                                                android:textSize="13sp"
+                                                android:textStyle="bold"/>
+
+                                            <EditText
+                                                android:id="@+id/prenom"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:ems="9"
+                                                android:inputType="text"
+                                                android:hint="@string/hint_prenom"
+                                                android:paddingStart="5dp"
+                                                android:textSize="16sp"
+                                                tools:ignore="RtlSymmetry"
+                                                android:background="@drawable/box_a" />
+
+                                        </LinearLayout>
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="15dp"
+                                            android:orientation="vertical">
+                                            <TextView
+                                                android:id="@+id/nomtxt"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:text="@string/nom"
+                                                android:textSize="13sp"
+                                                android:textStyle="bold"/>
+
+                                            <EditText
+                                                android:id="@+id/nom"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:ems="9"
+                                                android:inputType="text"
+                                                android:hint="@string/hint_nom"
+                                                android:paddingStart="5dp"
+                                                android:textSize="16sp"
+                                                tools:ignore="RtlSymmetry"
+                                                android:background="@drawable/box_a" />
+
+                                        </LinearLayout>
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_horizontal"
+                                        android:orientation="horizontal">
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical">
+
+                                            <TextView
+                                                android:id="@+id/sangtxt"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:text="@string/sang"
+                                                android:textSize="13sp"
+                                                android:textStyle="bold"/>
+
+                                            <EditText
+                                                android:id="@+id/sang"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:ems="9"
+                                                android:inputType="text"
+                                                android:hint="@string/hint_sang"
+                                                android:paddingStart="5dp"
+                                                android:textSize="16sp"
+                                                tools:ignore="RtlSymmetry"
+                                                android:background="@drawable/box_a" />
+
+                                        </LinearLayout>
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="15dp"
+                                            android:orientation="vertical">
+                                            <TextView
+                                                android:id="@+id/poidstxt"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:text="Poids"
+                                                android:textSize="13sp"
+                                                android:textStyle="bold"/>
+
+                                            <EditText
+                                                android:id="@+id/poids"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:ems="9"
+                                                android:inputType="text"
+                                                android:hint="Saisir le Poids"
+                                                android:paddingStart="5dp"
+                                                android:textSize="16sp"
+                                                tools:ignore="RtlSymmetry"
+                                                android:background="@drawable/box_a" />
+
+                                        </LinearLayout>
+                                    </LinearLayout>
+
+                                    <LinearLayout
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-
+                                        android:layout_gravity="center_horizontal"
+                                        android:layout_marginTop="15dp"
                                         android:orientation="vertical">
-                                        <!-- TextView et EditText pour le sexe -->
                                         <TextView
-                                            android:id="@+id/smtxt"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Vous vivez seul ?"
+                                            android:textSize="13sp"
+                                            android:textStyle="bold"/>
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+                                            <LinearLayout
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="horizontal"
+                                                android:background="@drawable/purple"
+                                                android:paddingStart="5dp"
+                                                android:paddingEnd="5dp"
+                                                android:gravity="center"
+                                                >
+                                                <ImageView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:src="@drawable/ring"/>
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="OUI"
+                                                    android:textSize="12sp"
+                                                    android:textStyle="bold">
+                                                </TextView>
+
+                                            </LinearLayout>
+                                            <LinearLayout
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="horizontal"
+                                                android:background="@drawable/purple"
+                                                android:paddingStart="5dp"
+                                                android:paddingEnd="5dp"
+                                                android:layout_marginStart="20dp"
+                                                android:gravity="center"
+                                                >
+                                                <ImageView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:src="@drawable/ring"/>
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="NON"
+                                                    android:textSize="12sp"
+                                                    android:textStyle="bold">
+                                                </TextView>
+
+                                            </LinearLayout>
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_horizontal">
+                                        <LinearLayout
+                                            android:id="@+id/aliment"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="@string/sm"
+                                            android:layout_marginTop="15dp"
+                                            android:layout_centerVertical="true"
+                                            android:orientation="vertical">
+
+                                            <!-- TextView et EditText pour le pays -->
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="Aliments"
+                                                android:textSize="13sp"
+                                                android:textStyle="bold" />
+                                            <EditText
+                                                android:id="@+id/alimenttxt"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:background="@drawable/box_b"
+                                                android:ems="9"
+                                                android:hint="Saisir vos aliments"
+                                                android:inputType="text"
+                                                android:paddingStart="5dp"
+                                                android:textSize="16sp"
+                                                tools:ignore="RtlSymmetry" />
+
+                                        </LinearLayout>
+
+                                        <ImageButton
+                                            android:id="@+id/btn_b"
+                                            android:layout_width="16dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginStart="20dp"
+                                            android:layout_toEndOf="@id/aliment"
+                                            android:background="@android:color/transparent"
+                                            android:src="@drawable/plus">
+
+                                        </ImageButton>
+
+                                        <TextView
+
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="10dp"
+                                            android:text=" arachide"
+                                            android:paddingStart="5dp"
+                                            android:paddingEnd="5dp"
                                             android:textSize="12sp"
+                                            android:background="@drawable/purple"
+                                            android:layout_below="@id/aliment"
                                             android:textStyle="bold" />
-                                        <EditText
-                                            android:id="@+id/sm"
+                                    </RelativeLayout>
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_horizontal">
+                                        <LinearLayout
+                                            android:id="@+id/allergie"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:background="@drawable/box_b"
+                                            android:layout_marginTop="15dp"
+                                            android:layout_centerVertical="true"
+                                            android:orientation="vertical">
+
+                                            <!-- TextView et EditText pour le pays -->
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="Allergies"
+                                                android:textSize="13sp"
+                                                android:textStyle="bold" />
+                                            <EditText
+                                                android:id="@+id/allergietxt"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:background="@drawable/box_b"
+                                                android:ems="9"
+                                                android:hint="Saisir vos allergies"
+                                                android:inputType="text"
+                                                android:paddingStart="5dp"
+                                                android:textSize="16sp"
+                                                tools:ignore="RtlSymmetry" />
+
+                                        </LinearLayout>
+                                        <ImageButton
+                                            android:id="@+id/btn_a"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginStart="20dp"
+                                            android:layout_toEndOf="@id/allergie"
+                                            android:background="@android:color/transparent"
+                                            android:src="@drawable/plus">
+
+                                        </ImageButton>
+
+                                        <TextView
+
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="10dp"
+                                            android:text="Allergies au latex"
+                                            android:paddingStart="5dp"
+                                            android:paddingEnd="5dp"
+                                            android:textSize="12sp"
+                                            android:background="@drawable/purple"
+                                            android:layout_below="@id/allergie"
+                                            android:textStyle="bold" />
+                                    </RelativeLayout>
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_horizontal">
+                                        <LinearLayout
+                                            android:id="@+id/medoc"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="15dp"
+                                            android:layout_centerVertical="true"
+                                            android:orientation="vertical">
+
+                                            <!-- TextView et EditText pour le pays -->
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="Médicament"
+                                                android:textSize="13sp"
+                                                android:textStyle="bold" />
+                                            <EditText
+                                                android:id="@+id/medoctxt"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:background="@drawable/box_b"
+                                                android:ems="9"
+                                                android:hint="Saisir vos médicaments"
+                                                android:inputType="text"
+                                                android:paddingStart="5dp"
+                                                android:textSize="16sp"
+                                                tools:ignore="RtlSymmetry" />
+
+                                        </LinearLayout>
+                                        <ImageButton
+                                            android:id="@+id/btn_c"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginStart="20dp"
+                                            android:layout_toEndOf="@id/medoc"
+                                            android:background="@android:color/transparent"
+                                            android:src="@drawable/plus">
+
+                                        </ImageButton>
+
+                                        <TextView
+
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="10dp"
+                                            android:text="Paracetamol"
+                                            android:paddingStart="5dp"
+                                            android:paddingEnd="5dp"
+                                            android:textSize="12sp"
+                                            android:background="@drawable/purple"
+                                            android:layout_below="@id/medoc"
+                                            android:textStyle="bold" />
+                                    </RelativeLayout>
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_horizontal">
+                                        <LinearLayout
+                                            android:id="@+id/chirugie"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="15dp"
+                                            android:layout_centerVertical="true"
+                                            android:orientation="vertical">
+
+                                            <!-- TextView et EditText pour le pays -->
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="Intervention Chirurgicales"
+                                                android:textSize="13sp"
+                                                android:textStyle="bold" />
+                                            <EditText
+                                                android:id="@+id/chirugie_id"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:background="@drawable/box_b"
+                                                android:ems="9"
+                                                android:hint="Saisissez vos antécédents chirurgicaux."
+                                                android:inputType="text"
+                                                android:paddingStart="5dp"
+                                                android:textSize="16sp"
+                                                tools:ignore="RtlSymmetry" />
+
+                                        </LinearLayout>
+                                        <ImageButton
+                                            android:id="@+id/btn_d"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginStart="20dp"
+                                            android:layout_toEndOf="@id/chirugie"
+                                            android:background="@android:color/transparent"
+                                            android:src="@drawable/plus">
+
+                                        </ImageButton>
+
+                                        <TextView
+
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="10dp"
+                                            android:text="Chirugie Dentaire"
+                                            android:paddingStart="5dp"
+                                            android:paddingEnd="5dp"
+                                            android:textSize="12sp"
+                                            android:background="@drawable/purple"
+                                            android:layout_below="@id/chirugie"
+                                            android:textStyle="bold" />
+                                    </RelativeLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:layout_margin="10dp"
+                                        android:layout_marginTop="15dp">
+                                        <TextView
+
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Assurance"
+                                            android:textSize="13sp"
+                                            android:textStyle="bold"/>
+
+                                        <EditText
+
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
                                             android:ems="9"
-                                            android:hint="@string/hint_sm"
                                             android:inputType="text"
+                                            android:hint="Saisir le nom de l assurance"
+                                            android:maxLines="2"
                                             android:paddingStart="5dp"
-                                            android:textSize="11sp"
-                                            tools:ignore="RtlSymmetry" />
+                                            android:textSize="16sp"
+                                            tools:ignore="RtlSymmetry"
+                                            android:background="@drawable/box_b" />
+
                                     </LinearLayout>
                                     <LinearLayout
-                                        android:id="@+id/sex"
-                                        android:layout_width="wrap_content"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_marginTop="15dp"
-                                        android:orientation="vertical">
-                                        <!-- TextView et EditText pour le sexe -->
+                                        android:orientation="vertical"
+                                        android:layout_margin="10dp"
+                                        android:layout_marginTop="15dp">
                                         <TextView
-                                            android:id="@+id/sextxt"
+
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="@string/sexe"
-                                            android:textSize="12sp"
-                                            android:textStyle="bold" />
+                                            android:text="Numero de l'assurance"
+                                            android:textSize="13sp"
+                                            android:textStyle="bold"/>
+
                                         <EditText
-                                            android:id="@+id/sexe"
-                                            android:layout_width="wrap_content"
+
+                                            android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
-                                            android:background="@drawable/box_b"
                                             android:ems="9"
-                                            android:hint="@string/hint_sexe"
                                             android:inputType="text"
+                                            android:hint="Saisir le numero de l'assurance"
+                                            android:maxLines="2"
                                             android:paddingStart="5dp"
-                                            android:textSize="11sp"
-                                            tools:ignore="RtlSymmetry" />
-                                    </LinearLayout>
-                                    <LinearLayout
-                                        android:id="@+id/birth_date"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="15dp"
-                                        android:orientation="vertical">
-                                        <!-- TextView et EditText pour la date de naissance -->
-                                        <TextView
-                                            android:id="@+id/birth_datetxt"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="@string/date"
-                                            android:textSize="12sp"
-                                            android:textStyle="bold" />
-                                        <EditText
-                                            android:id="@+id/hbd"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:background="@drawable/box_b"
-                                            android:ems="9"
-                                            android:hint="@string/hint_date"
-                                            android:inputType="date"
-                                            android:paddingStart="5dp"
-                                            android:textSize="11sp"
-                                            tools:ignore="RtlSymmetry" />
-                                    </LinearLayout>
+                                            android:textSize="16sp"
+                                            tools:ignore="RtlSymmetry"
+                                            android:background="@drawable/box_b" />
 
-                                    <LinearLayout
-                                        android:id="@+id/address"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="15dp"
-                                        android:orientation="vertical">
-                                        <!-- TextView et EditText pour l'adresse -->
-                                        <TextView
-                                            android:id="@+id/addresstxt"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="@string/adress"
-                                            android:textSize="12sp"
-                                            android:textStyle="bold" />
-                                        <EditText
-                                            android:id="@+id/adresse"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:background="@drawable/box_b"
-                                            android:ems="9"
-                                            android:hint="@string/hint_adr"
-                                            android:inputType="date"
-                                            android:paddingStart="5dp"
-                                            android:textSize="11sp"
-                                            tools:ignore="RtlSymmetry" />
                                     </LinearLayout>
                                     <LinearLayout
-                                        android:id="@+id/country"
-                                        android:layout_width="wrap_content"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_marginTop="15dp"
-                                        android:orientation="vertical">
-
-                                        <!-- TextView et EditText pour le pays -->
+                                        android:orientation="vertical"
+                                        android:layout_margin="10dp"
+                                        android:layout_marginTop="15dp">
                                         <TextView
-                                            android:id="@+id/statetxt"
+                                            android:id="@+id/vpwdtxt"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="@string/pays"
-                                            android:textSize="12sp"
-                                            android:textStyle="bold" />
+                                            android:text="Antecedent Médicaux"
+                                            android:textSize="13sp"
+                                            android:textStyle="bold"/>
+
                                         <EditText
-                                            android:id="@+id/state"
-                                            android:layout_width="wrap_content"
+                                            android:id="@+id/vpwd"
+                                            android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
-                                            android:background="@drawable/box_b"
                                             android:ems="9"
-                                            android:hint="@string/hint_pays"
                                             android:inputType="text"
+                                            android:hint="@string/hint_ange"
+                                            android:maxLines="2"
                                             android:paddingStart="5dp"
-                                            android:textSize="11sp"
-                                            tools:ignore="RtlSymmetry" />
+                                            android:textSize="16sp"
+                                            tools:ignore="RtlSymmetry"
+                                            android:background="@drawable/box_c" />
 
                                     </LinearLayout>
-
                                     <LinearLayout
-                                        android:id="@+id/city"
-                                        android:layout_width="wrap_content"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_marginTop="15dp"
-                                        android:orientation="vertical">
-                                        <!-- TextView et EditText pour la ville -->
+                                        android:orientation="vertical"
+                                        android:layout_margin="10dp"
+                                        android:layout_marginTop="15dp">
                                         <TextView
-                                            android:id="@+id/citytxt"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="@string/ville"
-                                            android:textSize="12sp"
-                                            android:textStyle="bold" />
+                                            android:text="Médicament Pris"
+                                            android:textSize="13sp"
+                                            android:textStyle="bold"/>
+
                                         <EditText
-                                            android:id="@+id/ville"
-                                            android:layout_width="wrap_content"
+                                            android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
-                                            android:background="@drawable/box_b"
                                             android:ems="9"
-                                            android:hint="@string/hint_ville"
                                             android:inputType="text"
+                                            android:hint="Posologie, Fréquence ..."
+                                            android:maxLines="2"
                                             android:paddingStart="5dp"
-                                            android:textSize="11sp"
-                                            tools:ignore="RtlSymmetry" />
+                                            android:textSize="16sp"
+                                            tools:ignore="RtlSymmetry"
+                                            android:background="@drawable/box_c" />
 
-                                    </LinearLayout>
-                                    <LinearLayout
-                                        android:id="@+id/quartier"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="15dp"
-                                        android:orientation="vertical">
-                                        <!-- TextView et EditText pour la ville -->
-                                        <TextView
-                                            android:id="@+id/quartier_txt"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="@string/quartier"
-                                            android:textSize="12sp"
-                                            android:textStyle="bold" />
-                                        <EditText
-                                            android:id="@+id/quatier_id"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:background="@drawable/box_b"
-                                            android:ems="9"
-                                            android:hint="@string/hint_qj"
-                                            android:inputType="text"
-                                            android:paddingStart="5dp"
-                                            android:textSize="11sp"
-                                            tools:ignore="RtlSymmetry" />
-
-                                    </LinearLayout>
-
-                                    <LinearLayout
-                                        android:id="@+id/phone_number"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="15dp"
-                                        android:orientation="vertical">
-
-                                        <!-- TextView et EditText pour le numéro de téléphone -->
-                                        <TextView
-                                            android:id="@+id/numerotxt"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="@string/num"
-                                            android:textSize="12sp"
-                                            android:textStyle="bold" />
-                                        <EditText
-                                            android:id="@+id/numero"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:background="@drawable/box_b"
-                                            android:ems="5"
-                                            android:hint="@string/hint_num"
-                                            android:inputType="phone"
-                                            android:paddingStart="5dp"
-                                            android:textSize="11sp"
-                                            tools:ignore="RtlSymmetry" />
-                                    </LinearLayout>
-
-                                    <LinearLayout
-                                        android:id="@+id/other"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="15dp"
-                                        android:orientation="vertical">
-                                        <!-- TextView et EditText pour l'adresse e-mail -->
-                                        <TextView
-                                            android:id="@+id/othertxt"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="@string/other"
-                                            android:textSize="12sp"
-                                            android:textStyle="bold" />
-                                        <EditText
-                                            android:id="@+id/othernum"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:background="@drawable/box_b"
-                                            android:ems="9"
-                                            android:hint="@string/hint_other"
-                                            android:inputType="date"
-                                            android:paddingStart="5dp"
-                                            android:textSize="11sp"
-                                            tools:ignore="RtlSymmetry" />
-                                    </LinearLayout>
-
-                                    <LinearLayout
-                                        android:id="@+id/social_security_number"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="15dp"
-                                        android:orientation="vertical">
-                                        <!-- TextView et EditText pour le numéro de sécurité sociale -->
-                                        <TextView
-                                            android:id="@+id/ssntxt"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="@string/ssn"
-                                            android:textSize="12sp"
-                                            android:textStyle="bold" />
-                                        <EditText
-                                            android:id="@+id/social_security"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:background="@drawable/box_b"
-                                            android:ems="9"
-                                            android:hint="@string/hint_ssn"
-                                            android:inputType="number"
-                                            android:paddingStart="5dp"
-                                            android:textSize="11sp"
-                                            tools:ignore="RtlSymmetry" />
                                     </LinearLayout>
 
                                     <LinearLayout
                                         android:id="@+id/line"
-                                        android:layout_width="wrap_content"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_marginStart="10dp"
-                                        android:layout_marginTop="30dp"
-                                        android:layout_marginEnd="10dp"
+                                        android:layout_margin="20dp"
                                         android:gravity="center"
                                         android:orientation="horizontal">
 
@@ -586,7 +818,6 @@
                                             android:background="@drawable/rectangle_blanc">
 
                                             <TextView
-                                                android:id="@+id/text2"
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
                                                 android:layout_centerInParent="true"
@@ -595,7 +826,7 @@
                                                 android:textStyle="bold" />
                                         </RelativeLayout>
                                         <RelativeLayout
-                                            android:id="@+id/btn1"
+                                            android:id="@+id/btn"
                                             android:layout_width="0dp"
                                             android:layout_height="40dp"
                                             android:layout_gravity="center_horizontal"
@@ -604,7 +835,6 @@
                                             android:background="@drawable/rectangle_violet">
 
                                             <TextView
-                                                android:id="@+id/text1"
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
                                                 android:layout_centerInParent="true"

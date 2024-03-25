@@ -64,8 +64,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:background="@drawable/frame_c">
+                android:background="@drawable/frame_c"
+                android:gravity="center">
 
                 <ImageView
                     android:id="@+id/medipass"
@@ -79,16 +79,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/medipass"
+                    android:layout_marginStart="20dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="20dp"
-                    android:layout_marginStart="20dp"
-                    android:textSize="16sp"
-                    android:textStyle="normal"
                     android:padding="5dp"
-                    android:text="@string/about" />
+                    android:text="@string/about"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
 
 
             </RelativeLayout>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

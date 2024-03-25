@@ -15,7 +15,7 @@
         android:orientation="vertical"
         android:background="@drawable/box_violet"
         android:elevation="10dp"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <ImageView
             android:layout_width="match_parent"
@@ -171,7 +171,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:visibility="invisible"
                         android:src="@drawable/trait" />
 
                 </LinearLayout>
@@ -197,7 +196,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:src="@drawable/trait"
-                        android:visibility="visible" />
+                        android:visibility="invisible" />
 
                 </LinearLayout>
 
@@ -279,84 +278,79 @@
                                     android:orientation="vertical">
 
                                     <LinearLayout
-                                        android:layout_width="match_parent"
+                                        android:id="@+id/type"
+                                        android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:orientation="horizontal">
-                                        <LinearLayout
-                                            android:id="@+id/reg"
+
+                                        android:orientation="vertical">
+                                        <!-- TextView et EditText pour le sexe -->
+                                        <TextView
+                                            android:id="@+id/smtxt"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:orientation="vertical">
-
-                                            <TextView
-                                                android:id="@+id/prenomtxt"
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
-                                                android:text="@string/prenom"
-                                                android:textSize="12sp"
-                                                android:textStyle="bold"/>
-
-                                            <EditText
-                                                android:id="@+id/prenom"
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
-                                                android:ems="9"
-                                                android:inputType="text"
-                                                android:hint="@string/hint_prenom"
-                                                android:paddingStart="5dp"
-                                                android:textSize="11sp"
-                                                tools:ignore="RtlSymmetry"
-                                                android:background="@drawable/box_a" />
-
-                                        </LinearLayout>
-                                        <LinearLayout
+                                            android:text="@string/sm"
+                                            android:textSize="12sp"
+                                            android:textStyle="bold" />
+                                        <EditText
+                                            android:id="@+id/sm"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:layout_marginStart="10dp"
-                                            android:orientation="vertical">
-                                            <TextView
-                                                android:id="@+id/nomtxt"
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
-                                                android:text="@string/nom"
-                                                android:textSize="12sp"
-                                                android:textStyle="bold"/>
-
-                                            <EditText
-                                                android:id="@+id/nom"
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
-                                                android:ems="9"
-                                                android:inputType="text"
-                                                android:hint="@string/hint_nom"
-                                                android:paddingStart="5dp"
-                                                android:textSize="11sp"
-                                                tools:ignore="RtlSymmetry"
-                                                android:background="@drawable/box_a" />
-
-                                        </LinearLayout>
+                                            android:background="@drawable/box_b"
+                                            android:ems="9"
+                                            android:hint="@string/hint_sm"
+                                            android:inputType="text"
+                                            android:paddingStart="5dp"
+                                            android:textSize="11sp"
+                                            tools:ignore="RtlSymmetry" />
                                     </LinearLayout>
                                     <LinearLayout
+                                        android:id="@+id/sex"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="15dp"
+                                        android:orientation="vertical">
+                                        <!-- TextView et EditText pour le sexe -->
+                                        <TextView
+                                            android:id="@+id/sextxt"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/sexe"
+                                            android:textSize="12sp"
+                                            android:textStyle="bold" />
+                                        <EditText
+                                            android:id="@+id/sexe"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:background="@drawable/box_b"
+                                            android:ems="9"
+                                            android:hint="@string/hint_sexe"
+                                            android:inputType="text"
+                                            android:paddingStart="5dp"
+                                            android:textSize="11sp"
+                                            tools:ignore="RtlSymmetry" />
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:id="@+id/birth_date"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginTop="15dp"
                                         android:orientation="vertical">
                                         <!-- TextView et EditText pour la date de naissance -->
                                         <TextView
-                                            android:id="@+id/relationtxt"
+                                            android:id="@+id/birth_datetxt"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="@string/relation"
+                                            android:text="@string/date"
                                             android:textSize="12sp"
                                             android:textStyle="bold" />
                                         <EditText
-                                            android:id="@+id/relation"
+                                            android:id="@+id/hbd"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:background="@drawable/box_b"
                                             android:ems="9"
-                                            android:hint="@string/hint_relation"
-                                            android:inputType="text"
+                                            android:hint="@string/hint_date"
+                                            android:inputType="date"
                                             android:paddingStart="5dp"
                                             android:textSize="11sp"
                                             tools:ignore="RtlSymmetry" />
@@ -548,70 +542,6 @@
                                             android:background="@drawable/box_b"
                                             android:ems="9"
                                             android:hint="@string/hint_ssn"
-                                            android:inputType="number"
-                                            android:paddingStart="5dp"
-                                            android:textSize="11sp"
-                                            tools:ignore="RtlSymmetry" />
-                                    </LinearLayout>
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:background="@color/blue"
-                                        android:layout_marginTop="15dp"
-                                        android:layout_gravity="center_horizontal"
-                                        android:padding="5dp"
-                                        android:gravity="center"
-                                        android:text="SI LE PATIENT EST ÉTUDIANT"
-                                        android:textSize="15sp"
-                                        android:textColor="@color/white"
-                                        android:textStyle="bold">
-                                    </TextView>
-                                    <LinearLayout
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="15dp"
-                                        android:orientation="vertical">
-                                        <!-- TextView et EditText pour le numéro de sécurité sociale -->
-                                        <TextView
-                                            android:id="@+id/schooltxt"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="Nom de l'école / université / institut"
-                                            android:textSize="12sp"
-                                            android:textStyle="bold" />
-                                        <EditText
-                                            android:id="@+id/school"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:background="@drawable/box_b"
-                                            android:ems="9"
-                                            android:hint="Saisir le nom de l'école / université / institut"
-                                            android:inputType="number"
-                                            android:paddingStart="5dp"
-                                            android:textSize="11sp"
-                                            tools:ignore="RtlSymmetry" />
-                                    </LinearLayout>
-                                    <LinearLayout
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="15dp"
-                                        android:orientation="vertical">
-                                        <!-- TextView et EditText pour le numéro de sécurité sociale -->
-                                        <TextView
-                                            android:id="@+id/zonetxt"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="Adresse de l'école / université / institut"
-                                            android:textSize="12sp"
-                                            android:textStyle="bold" />
-                                        <EditText
-                                            android:id="@+id/zone"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:background="@drawable/box_b"
-                                            android:ems="9"
-                                            android:hint="Saisir l'adresse de l'école / université / institut"
                                             android:inputType="number"
                                             android:paddingStart="5dp"
                                             android:textSize="11sp"

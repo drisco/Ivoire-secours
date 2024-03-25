@@ -19,13 +19,13 @@
             android:name=".CodeQr"
             android:exported="false" />
         <activity
-            android:name=".InfoFiles"
+            android:name=".MedicalFiles"
             android:exported="false" />
         <activity
             android:name=".ContactFiles"
             android:exported="false" />
         <activity
-            android:name=".MedicalFiles"
+            android:name=".PersonFiles"
             android:exported="false" />
         <activity
             android:name=".Profile"
