@@ -10,7 +10,8 @@
     <string name="reg">S\'inscrire</string>
     <string name="aboutus">A Propos de nous :</string>
     <string name="qr">Créez un code QR sécurisé pour vos données médicales.</string>
-    <string name="about">MediPass représente une innovation majeure dans le domaine de la santé, offrant une collecte et un accès automatisés aux données médicales en cas d\'urgence. En quelques instants, les intervenants en première ligne et les professionnels de la santé peuvent obtenir les informations essentielles nécessaires pour sauver des vies.</string>
+    <string name="about">MediPass est une plateforme numérique révolutionnaire conçue pour simplifier et accélérer la collecte ainsi que le partage des données médicales cruciales en cas d\'urgence.
+        Notre mission est de fournirune solution innovante qui garantit que les informations médicales essentielles soient accessibles rapidement et facilement lorsque chaque seconde compte. </string>
 
     <string name="prenom">Prénom</string>
     <string name="hint_prenom">Saisir le prénom</string>

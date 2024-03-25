@@ -149,6 +149,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center_horizontal"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -618,13 +620,74 @@
                                             tools:ignore="RtlSymmetry" />
                                     </LinearLayout>
 
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/blue"
+                                        android:layout_marginTop="15dp"
+                                        android:layout_gravity="center_horizontal"
+                                        android:padding="5dp"
+                                        android:gravity="center"
+                                        android:text="MEDECIN TRAITANT"
+                                        android:textSize="15sp"
+                                        android:textColor="@color/white"
+                                        android:textStyle="bold">
+                                    </TextView>
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="15dp"
+                                        android:orientation="vertical">
+                                        <!-- TextView et EditText pour le numéro de sécurité sociale -->
+                                        <TextView
+                                            android:id="@+id/doctortxt"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Nom du médecin traitant"
+                                            android:textSize="12sp"
+                                            android:textStyle="bold" />
+                                        <EditText
+                                            android:id="@+id/doctor"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:background="@drawable/box_b"
+                                            android:ems="9"
+                                            android:hint="Saisir le nom de votre médecin "
+                                            android:inputType="number"
+                                            android:paddingStart="5dp"
+                                            android:textSize="11sp"
+                                            tools:ignore="RtlSymmetry" />
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="15dp"
+                                        android:orientation="vertical">
+                                        <!-- TextView et EditText pour le numéro de sécurité sociale -->
+                                        <TextView
+                                            android:id="@+id/docnumtxt"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Contact du médecin"
+                                            android:textSize="12sp"
+                                            android:textStyle="bold" />
+                                        <EditText
+                                            android:id="@+id/docnum"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:background="@drawable/box_b"
+                                            android:ems="9"
+                                            android:hint="Saisir le contact du médecin"
+                                            android:inputType="number"
+                                            android:paddingStart="5dp"
+                                            android:textSize="11sp"
+                                            tools:ignore="RtlSymmetry" />
+                                    </LinearLayout>
                                     <LinearLayout
                                         android:id="@+id/line"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:layout_marginStart="10dp"
                                         android:layout_marginTop="30dp"
-                                        android:layout_marginEnd="10dp"
                                         android:gravity="center"
                                         android:orientation="horizontal">
 

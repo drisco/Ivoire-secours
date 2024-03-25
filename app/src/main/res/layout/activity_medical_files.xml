@@ -149,6 +149,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center_horizontal"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -495,7 +497,7 @@
 
                                         <ImageButton
                                             android:id="@+id/btn_b"
-                                            android:layout_width="16dp"
+                                            android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_centerVertical="true"
                                             android:layout_marginStart="20dp"
@@ -699,7 +701,7 @@
 
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="Assurance"
+                                            android:text="Nom de l'assureur"
                                             android:textSize="13sp"
                                             android:textStyle="bold"/>
 
@@ -709,7 +711,7 @@
                                             android:layout_height="wrap_content"
                                             android:ems="9"
                                             android:inputType="text"
-                                            android:hint="Saisir le nom de l assurance"
+                                            android:hint="Saisir le nom de l'assurance"
                                             android:maxLines="2"
                                             android:paddingStart="5dp"
                                             android:textSize="16sp"
@@ -727,7 +729,7 @@
 
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="Numero de l'assurance"
+                                            android:text="Numero de police d'assurance"
                                             android:textSize="13sp"
                                             android:textStyle="bold"/>
 
@@ -737,7 +739,7 @@
                                             android:layout_height="wrap_content"
                                             android:ems="9"
                                             android:inputType="text"
-                                            android:hint="Saisir le numero de l'assurance"
+                                            android:hint="Saisir le numero de police d'assurance"
                                             android:maxLines="2"
                                             android:paddingStart="5dp"
                                             android:textSize="16sp"
@@ -792,6 +794,32 @@
                                             android:ems="9"
                                             android:inputType="text"
                                             android:hint="Posologie, Fréquence ..."
+                                            android:maxLines="2"
+                                            android:paddingStart="5dp"
+                                            android:textSize="16sp"
+                                            tools:ignore="RtlSymmetry"
+                                            android:background="@drawable/box_c" />
+
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:layout_margin="10dp"
+                                        android:layout_marginTop="15dp">
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Directives médicales anticipées (DMA)"
+                                            android:textSize="13sp"
+                                            android:textStyle="bold"/>
+
+                                        <EditText
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:ems="9"
+                                            android:inputType="text"
+                                            android:hint="Si vous avez des souhaits spécifiques concernant son traitement médical en cas d'urgence.."
                                             android:maxLines="2"
                                             android:paddingStart="5dp"
                                             android:textSize="16sp"

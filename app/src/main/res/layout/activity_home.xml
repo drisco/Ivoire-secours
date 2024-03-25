@@ -14,29 +14,12 @@
         android:background="@color/trans"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme">
-        <LinearLayout
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_centerVertical="true">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="35dp"
-                android:src="@drawable/logo"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="2dp"/>
-
-            <TextView
-                android:id="@+id/appdesc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/blue"
-                android:textStyle="bold"
-                android:textSize="10sp"
-                android:text="@string/qr"
-                android:layout_marginStart="5dp"
-                tools:ignore="SmallSp"/>
-        </LinearLayout>
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/logo" />
 
         <Button
             android:id="@+id/button"
@@ -47,7 +30,7 @@
             android:text="@string/reg"
             android:textSize="12sp"
             android:textStyle="bold"
-            android:layout_marginEnd="5dp"/>
+            android:layout_marginEnd="10dp"/>
     </RelativeLayout>
 
     <ScrollView
@@ -71,14 +54,26 @@
                     android:id="@+id/medipass"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="5dp"
                     android:src="@drawable/medipass_xl" />
 
+                <TextView
+                    android:id="@+id/welcome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/medipass"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:padding="5dp"
+                    android:text="Bienvenue sur MediPass !"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
                 <TextView
                     android:id="@+id/about"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/medipass"
+                    android:layout_below="@+id/welcome"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="20dp"
@@ -98,9 +93,9 @@
 
                 <ImageView
                     android:id="@+id/img_a"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/images" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/img_11" />
 
             </RelativeLayout>
 
@@ -108,7 +103,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:layout_marginTop="25dp">
+                android:layout_marginTop="5dp">
 
                 <ImageView
                     android:id="@+id/frame_b"
@@ -119,16 +114,245 @@
 
             <ImageView
                 android:id="@+id/img_c"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/img_2" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/img_12" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:layout_marginTop="5dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:background="@color/blu">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="FAQ MediPass"
+                        android:textColor="@color/rouge"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:gravity="end"
+                        android:layout_margin="10dp"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <!-- Question 1 -->
+                        <TextView
+                            android:id="@+id/q1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Qu'est-ce que MediPass ?"
+                            android:textSize="18sp"
+                            android:textColor="@color/blue"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="8dp"/>
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/img_10"
+                            android:layout_alignParentEnd="true"/>
+                        <TextView
+                            android:layout_below="@id/q1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="visible"
+                            android:textColor="@color/white"
+                            android:text="Créez votre profil : Téléchargez l'application MediPass et créez votre profil en quelques minutes.\nAjoutez vos données médicales : Renseignez vos antécédents médicaux, vos allergies, vos médicaments, vos contacts d'urgence et bien plus encore.
+        \nPartagez vos données en cas d'urgence : En cas d'urgence, les professionnels de la santé pourront accéder à vos données médicales via l'application MediPass."
+                            android:textSize="16sp"
+                            android:layout_marginBottom="16dp"/>
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <!-- Question 2 -->
+                        <TextView
+                            android:id="@+id/q2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Comment fonctionne MediPass ?"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/blue"
+                            android:layout_marginBottom="8dp"/>
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/img_10"
+                            android:layout_alignParentEnd="true"/>
+                        <TextView
+                            android:layout_below="@id/q2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:textColor="@color/white"
+                            android:text="MediPass est une plateforme numérique qui facilite la collecte et le partage automatisés de vos données médicales en cas d'urgence."
+                            android:textSize="16sp"
+                            android:layout_marginBottom="16dp"/>
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <!-- Question 3 -->
+                        <TextView
+                            android:id="@+id/q3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Qui peut utiliser MediPass ?"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/blue"
+                            android:layout_marginBottom="8dp"/>
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/img_10"
+                            android:layout_alignParentEnd="true"/>
+                        <TextView
+                            android:layout_below="@id/q3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:textColor="@color/white"
+                            android:text="MediPass est conçu pour tout le monde, quel que soit votre âge ou votre état de santé.
+        L'application est particulièrement utile pour les personnes : Âgées Souffrant de maladies chroniques Ayant des allergies Prenant plusieurs médicaments Voyageant"
+                            android:textSize="16sp"
+                            android:layout_marginBottom="16dp"/>
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <!-- Question 4 -->
+                        <TextView
+                            android:id="@+id/q4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="MediPass est-il sûr ?"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/blue"
+                            android:layout_marginBottom="8dp"/>
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/img_10"
+                            android:layout_alignParentEnd="true"/>
+                        <TextView
+                            android:layout_below="@id/q4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:textColor="@color/white"
+                            android:text="Oui, MediPass est une application sécurisée qui utilise les dernières technologies de cryptage pour protéger vos données médicales."
+                            android:textSize="16sp"
+                            android:layout_marginBottom="16dp"/>
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <!-- Question 5 -->
+                        <TextView
+                            android:id="@+id/q5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Combien coûte MediPass ?"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/blue"
+                            android:layout_marginBottom="8dp"/>
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/img_10"
+                            android:layout_alignParentEnd="true"/>
+                        <TextView
+                            android:layout_below="@id/q5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:textColor="@color/white"
+                            android:text="MediPass est un service gratuit pour les utilisateurs."
+                            android:textSize="16sp"
+                            android:layout_marginBottom="16dp"/>
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <!-- Question 6 -->
+                        <TextView
+                            android:id="@+id/q6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Comment puis-je modifier mes données médicales ?"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/blue"
+                            android:layout_marginBottom="8dp"/>
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/img_10"
+                            android:layout_alignParentEnd="true"/>
+                        <TextView
+                            android:layout_below="@id/q6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:textColor="@color/white"
+                            android:text="Vous pouvez modifier vos données médicales à tout moment en vous connectant à votre compte MediPass."
+                            android:textSize="16sp"
+                            android:layout_marginBottom="16dp"/>
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <!-- Question 6 -->
+                        <TextView
+                            android:id="@+id/q7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="N'hésitez pas à nous contacter si vous avez des questions :"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/blue"
+                            android:layout_marginBottom="8dp"/>
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/img_10"
+                            android:layout_alignParentEnd="true"/>
+                        <TextView
+                            android:layout_below="@id/q7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:textColor="@color/white"
+                            android:text="Vous pouvez modifier vos données médicales à tout moment en vous connectant à votre compte MediPass."
+                            android:textSize="16sp"
+                            android:layout_marginBottom="16dp"/>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
                 android:background="@drawable/frame_e"
-                android:layout_marginTop="25dp">
+                android:layout_marginTop="5dp">
 
             </RelativeLayout>
         </LinearLayout>
