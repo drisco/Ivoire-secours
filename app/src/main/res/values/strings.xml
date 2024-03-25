@@ -1,0 +1,85 @@
+<resources>
+    <string name="app_name">MediPass</string>
+    <string name="textview">TextView</string>
+    <string name="account">Créer un compte</string>
+    <string name="remember">Se souvenir de moi</string>
+    <string name="save">Sauvegarder</string>
+    <string name="annul">Annuler</string>
+    <string name="logout">Déconnexion</string>
+
+    <string name="reg">S\'inscrire</string>
+    <string name="aboutus">A Propos de nous :</string>
+    <string name="qr">Créez un code QR sécurisé pour vos données médicales.</string>
+    <string name="about">MediPass représente une innovation majeure dans le domaine de la santé, offrant une collecte et un accès automatisés aux données médicales en cas d\'urgence. En quelques instants, les intervenants en première ligne et les professionnels de la santé peuvent obtenir les informations essentielles nécessaires pour sauver des vies.</string>
+
+    <string name="prenom">Prénom</string>
+    <string name="hint_prenom">Saisir le prénom</string>
+
+    <string name="nom">Nom</string>
+    <string name="hint_nom">Saisir le nom</string>
+
+    <string name="mail">Adresse e-Mail</string>
+    <string name="hint_mail">example@gmail.com</string>
+
+    <string name="pwd">Mot de passe</string>
+    <string name="hint_pwd">Minimum 8 caractères</string>
+
+    <string name="vpwd">Confirmer mot de passe</string>
+    <string name="hint_vpwd">Confirmez le mot de passe</string>
+
+    <string name="gmail">Connecter vous depuis gmail</string>
+
+    <string name="nationalite">Nationalité</string>
+    <string name="hint_nation">Saisir votre nationalité</string>
+
+    <string name="date">Date de Naissance</string>
+    <string name="hint_date"> __ / __ / _____</string>
+
+    <string name="relation">Type de relation avec le Patient </string>
+    <string name="hint_relation">Choisir une option</string>
+
+    <string name="sang">Groupe Sanguin</string>
+    <string name="hint_sang">Choisir une option </string>
+
+    <string name="pays">Pays</string>
+    <string name="hint_pays">Choisir une option</string>
+
+    <string name="ville">Ville</string>
+    <string name="hint_ville">Saisir votre ville</string>
+
+    <string name="quartier">Quartier</string>
+    <string name="hint_qj">Saisir votre quartier</string>
+
+    <string name="adress">Adresse de résidence </string>
+    <string name="hint_adr">Saisir votre adresse de résidence</string>
+
+    <string name="sexe">Sexe</string>
+    <string name="hint_sexe">Saisir votre sexe</string>
+
+    <string name="sm">Situation matrimoniale</string>
+    <string name="hint_sm">Choisir une option</string>
+
+    <string name="pro">Profession</string>
+    <string name="hint_pro">Saisir votre profession</string>
+
+    <string name="ssn">Numéro de sécurité social</string>
+    <string name="hint_ssn">Saisir votre numéro de sécurité social </string>
+
+    <string name="ange">A Propos de votre ange </string>
+    <string name="hint_ange">Écrivez sur votre maladie chronique, Allergie, Symptomes ....</string>
+
+    <string name="num">Numéro de téléphone </string>
+    <string name="hint_num">Saisir votre numero de téléphone</string>
+
+    <string name="other">Autres numéro</string>
+    <string name="hint_other">Saisir votre numero de téléphone</string>
+
+    <string name="upload_img">Chargez votre photo</string>
+    <string name="hello">Bonjour Pierre Behanzin</string>
+    <string name="data">Données d\'urgence</string>
+    <string name="data_a">Données Personnel</string>
+    <string name="data_b">Contact d\'Urgence</string>
+    <string name="data_c">Information Médicale</string>
+
+
+</resources>
