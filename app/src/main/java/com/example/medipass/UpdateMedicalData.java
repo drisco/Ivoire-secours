@@ -9,13 +9,13 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,17 +29,17 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class MedicalFiles extends AppCompatActivity {
+public class UpdateMedicalData extends AppCompatActivity {
     ScrollView info_urgence,info_medical,dataUser;
     LinearLayout dp,cu,im;
-    int incr;
     private RelativeLayout annulationbtn,sauvegardebtn;
     DatabaseReference databaseReference;
+    int incr;
 
 
-    EditText nometprenom,sexe,date_de_nai,adresse,numero,numeroMeddecin,numero_de_secu,prenomcu,nomcu,type_relation
-            ,numerocu,autrenumcu,doctorName,doctorNum,groupe,poids,aliments,allergies
-              ,medicaments_regu,cmpreexistantes,nom_assureur,policeNum,num_securite_social,direction_medicale;
+    EditText nometprenom,sexe,date_de_nai,adresse,numero,autrenum,prenomcu,nomcu,type_relation
+            ,numerocu,autrenumcu,groupe,poids,allergies
+            ,medicaments_regu,cmpreexistantes,nom_assureur,policeNum,num_securite_social,direction_medicale;
 
 
     TextView session1,dpt,cut,imt,next,deconnecter;
@@ -47,81 +47,116 @@ public class MedicalFiles extends AppCompatActivity {
     CircleImageView photo1,photo;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
+    PopupRegister popusCostum;
     int currentStep = 1;
     String id;
-    PopupRegister popusCostum;
-
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_medical_files);
+        setContentView(R.layout.activity_update_medical_data);
+
         databaseReference = FirebaseDatabase.getInstance().getReference().child("donneesmedicale");
 
         sharedPreferences = getSharedPreferences("userData", Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
-         id = sharedPreferences.getString("id", "");
-        String prenom = sharedPreferences.getString("prenom", "");
-        String nom = sharedPreferences.getString("nom", "");
+        id = sharedPreferences.getString("id", "");
         String photos = sharedPreferences.getString("image", "");
         String numero1 = sharedPreferences.getString("numero", "");
         String adress = sharedPreferences.getString("adress", "");
+        String prenom = sharedPreferences.getString("prenom", "");
+        String nom = sharedPreferences.getString("nom", "");
+        String numeroMedecin = sharedPreferences.getString("numeroMedecin", "");
+
+        String sexe1 = sharedPreferences.getString("sexe", "");
+        String dateDeNaissance1 = sharedPreferences.getString("dateDeNaissance", "");
+        String numeroDeSecu1 = sharedPreferences.getString("numeroDeSecu", "");
+        String prenomcu1 = sharedPreferences.getString("prenomcu", "");
+        String nomcu1 = sharedPreferences.getString("nomcu", "");
+        String typeRelation1 = sharedPreferences.getString("typeRelation", "");
+        String autreNumcu1 = sharedPreferences.getString("autreNumcu", "");
+        String groupe1 = sharedPreferences.getString("groupe", "");
+        String poids1 = sharedPreferences.getString("poids", "");
+        String medicaments1 = sharedPreferences.getString("medicaments", "");
+        String allergies1 = sharedPreferences.getString("allergies", "");
+        String assureurNon1 = sharedPreferences.getString("assureurNon", "");
+        String policeNum1 = sharedPreferences.getString("policeNum", "");
+        String numSecuriteSocial1 = sharedPreferences.getString("numSecuriteSocial", "");
+        String dma1 = sharedPreferences.getString("dma", "");
+        String cmpreexistantes1 = sharedPreferences.getString("cmpreexistantes", "");
+
+
 
         photo1 = findViewById(R.id.userdashbord);
-        photo = findViewById(R.id.user);
         acceuil = findViewById(R.id.acceuil);
-        session1 = findViewById(R.id.username);
         deconnecter = findViewById(R.id.session);
-        session1.setText("Bonjour "+nom+ " " + prenom);
         Bitmap bip =ImageUtils.stringToBitmap(photos);
-        photo.setImageBitmap(bip);
         photo1.setImageBitmap(bip);
         deconnecter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 editor.clear(); // Supprimer toutes les données
                 editor.apply();
-                startActivity(new Intent(MedicalFiles.this, Login.class));
+                startActivity(new Intent(UpdateMedicalData.this, Login.class));
                 finish();
             }
         });
         acceuil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MedicalFiles.this, ProfilePanel.class));
+                startActivity(new Intent(UpdateMedicalData.this, ProfilePanel.class));
                 finish();
             }
         });
 
         // scrollview1
         nometprenom = findViewById(R.id.smDu);
+        nometprenom.setText(nom+ " "+prenom);
         sexe = findViewById(R.id.sexeDu);
+        sexe.setText(sexe1);
         date_de_nai = findViewById(R.id.hbdDu);
+        date_de_nai.setText(dateDeNaissance1);
         adresse = findViewById(R.id.adresseDu);
+        adresse.setText(adress);
         numero = findViewById(R.id.numeroDu);
-        numeroMeddecin = findViewById(R.id.autrenumDu);
+        numero.setText(numero1);
+        autrenum = findViewById(R.id.autrenumDu);
+        autrenum.setText(numeroMedecin);
 
-        setTextMethodePre(adress,nom,prenom,numero1);
 
         //scrollview2
         prenomcu=findViewById(R.id.prenomCu);
+        prenomcu.setText(prenomcu1);
         nomcu=findViewById(R.id.nomCu);
+        nomcu.setText(nomcu1);
         type_relation=findViewById(R.id.relationCu);
+        type_relation.setText(typeRelation1);
         numerocu = findViewById(R.id.telCu);
+        numerocu.setText(numeroDeSecu1);
         autrenumcu = findViewById(R.id.autrenumCu);
+        autrenumcu.setText(autreNumcu1);
 
 
         //Scrollview3
         groupe=findViewById(R.id.sangim);
+        groupe.setText(groupe1);
         poids=findViewById(R.id.poids);
+        poids.setText(poids1);
         allergies=findViewById(R.id.allergieim);
+        allergies.setText(allergies1);
         medicaments_regu=findViewById(R.id.medocim);
+        medicaments_regu.setText(medicaments1);
         cmpreexistantes=findViewById(R.id.chirugieim);
+        cmpreexistantes.setText(cmpreexistantes1);
         nom_assureur=findViewById(R.id.assuranceim);
+        nom_assureur.setText(assureurNon1);
         policeNum=findViewById(R.id.num_assurance_im);
+        policeNum.setText(policeNum1);
         num_securite_social=findViewById(R.id.num_securite_social);
+        num_securite_social.setText(numSecuriteSocial1);
         direction_medicale=findViewById(R.id.dmaIm);
+        direction_medicale.setText(dma1);
 
         next = findViewById(R.id.suivant);
         sauvegardebtn = findViewById(R.id.sauvegardebtn);
@@ -138,9 +173,7 @@ public class MedicalFiles extends AppCompatActivity {
         dpbtn = findViewById(R.id.dpBtn);
         cubtn = findViewById(R.id.cuBtn);
         imbtn = findViewById(R.id.imBtn);
-        /*dpd =findViewById(R.id.dpd);
-        cuc =findViewById(R.id.cuc);
-        imi =findViewById(R.id.imi);*/
+
         dpbtn.setVisibility(View.VISIBLE);
         cubtn.setVisibility(View.GONE);
         imbtn.setVisibility(View.GONE);
@@ -148,7 +181,7 @@ public class MedicalFiles extends AppCompatActivity {
         annulationbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MedicalFiles.this, ProfilePanel.class));
+                startActivity(new Intent(UpdateMedicalData.this, ProfilePanel.class));
                 finish();
             }
         });
@@ -189,20 +222,15 @@ public class MedicalFiles extends AppCompatActivity {
                         next.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                popusCostum = new PopupRegister(MedicalFiles.this);
+                                popusCostum = new PopupRegister(UpdateMedicalData.this);
                                 popusCostum.setCancelable(false);
                                 popusCostum.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                                 popusCostum.show();
-                                if (sexe.getText().toString().isEmpty()|| date_de_nai.getText().toString().isEmpty()|| adresse.getText().toString().isEmpty()||prenomcu.getText().toString().isEmpty()||nomcu.getText().toString().isEmpty()||
-                                        numerocu.getText().toString().isEmpty()||type_relation.getText().toString().isEmpty()||medicaments_regu.getText().toString().isEmpty()||nom_assureur.getText().toString().isEmpty()){
-                                    Toast.makeText(MedicalFiles.this, "Veuillez remplir tout les champs !!", Toast.LENGTH_SHORT).show();
-                                }else{
-                                    ajouterLesDonneeesMedicales(sexe.getText().toString(),date_de_nai.getText().toString(),adresse.getText().toString(),prenomcu.getText().toString()
-                                            ,nomcu.getText().toString(),numerocu.getText().toString(),type_relation.getText().toString(),autrenumcu.getText().toString(),groupe.getText().toString()
-                                            ,poids.getText().toString(),allergies.getText().toString(),medicaments_regu.getText().toString(),cmpreexistantes.getText().toString(),nom_assureur.getText().toString()
-                                            ,policeNum.getText().toString(),num_securite_social.getText().toString(),direction_medicale.getText().toString(),numeroMeddecin.getText().toString());
-                                }
-
+                                ajouterLesDonneeesMedicales(sexe.getText().toString(),date_de_nai.getText().toString(),adresse.getText().toString()
+                                        ,autrenum.getText().toString(),prenomcu.getText().toString(),nomcu.getText().toString(),type_relation.getText().toString()
+                                        ,numerocu.getText().toString(),autrenumcu.getText().toString(),groupe.getText().toString(),poids.getText().toString(),allergies.getText().toString()
+                                        ,medicaments_regu.getText().toString(),cmpreexistantes.getText().toString(),nom_assureur.getText().toString(),policeNum.getText().toString(),num_securite_social.getText().toString()
+                                        ,direction_medicale.getText().toString());
                             }
                         });
                     }
@@ -251,12 +279,9 @@ public class MedicalFiles extends AppCompatActivity {
         });
     }
 
-
-
-    private void ajouterLesDonneeesMedicales(String sexe, String dateNaissance, String adress, String prenomSecu, String nomSecu, String numeroSecu
-            , String relation, String autreNumSecu, String groupeSanguin, String poids, String allergies, String MediRegulier, String cmpreexistantes
-            , String nomAssureur, String policeNum, String numSecurSociale, String directionMedi, String numeroMedecin) {
-
+    private void ajouterLesDonneeesMedicales(String sexe, String dateNaissance, String adress, String medecinNum, String prenomSecu, String nomSecu, String relation, String numeroSecu, String autreNumSecu, String groupe, String poids
+            , String allergies, String mediRegulier, String compriPeexistant, String nomAssureur, String policeNumero, String numeroSecuSociale, String dma)
+    {
         editor.putString("sexe", sexe);
         editor.putString("dateDeNaissance", dateNaissance);
         editor.putString("numeroDeSecu", numeroSecu);
@@ -265,38 +290,30 @@ public class MedicalFiles extends AppCompatActivity {
         editor.putString("adressVictime", adress);
         editor.putString("typeRelation", relation);
         editor.putString("autreNumcu", autreNumSecu);
-        editor.putString("groupe", groupeSanguin);
+        editor.putString("groupe", groupe);
         editor.putString("poids", poids);
         editor.putString("allergies", allergies);
-        editor.putString("medicaments", MediRegulier);
+        editor.putString("medicaments", mediRegulier);
         editor.putString("assureurNon", nomAssureur);
-        editor.putString("policeNum", policeNum);
-        editor.putString("numSecuriteSocial", numSecurSociale);
-        editor.putString("cmpreexistantes", cmpreexistantes);
-        editor.putString("numeroMedecin", numeroMedecin);
-        editor.putString("dma", directionMedi);
+        editor.putString("policeNum", policeNumero);
+        editor.putString("numSecuriteSocial", numeroSecuSociale);
+        editor.putString("cmpreexistantes", compriPeexistant);
+        editor.putString("numeroMedecin", medecinNum);
+        editor.putString("dma", dma);
         editor.apply();
         DonneesMedicales donnes =new DonneesMedicales(id,nomSecu,prenomSecu,numeroSecu,autreNumSecu,relation,sexe,dateNaissance
-                ,adress,groupeSanguin,poids,allergies,MediRegulier,nomAssureur,numSecurSociale,policeNum,directionMedi,numeroMedecin,cmpreexistantes);
+                ,adress,groupe,poids,allergies,mediRegulier,nomAssureur,numeroSecuSociale,policeNumero,dma,medecinNum,compriPeexistant);
         databaseReference.child(id).setValue(donnes);
         popusCostum.dismiss();
-        startActivity(new Intent(MedicalFiles.this, ProfilePanel.class));
+        startActivity(new Intent(UpdateMedicalData.this, ProfilePanel.class));
         finish();
-
-    }
-
-    @SuppressLint("SetTextI18n")
-    private void setTextMethodePre(String adress, String nom, String prenom, String numero1) {
-        adresse.setText(adress);
-        nometprenom.setText(nom+ " " +prenom);
-        numero.setText(numero1);
     }
     @Override
     public void onBackPressed() {
         incr++;
         if (incr==1){
             super.onBackPressed();
-            startActivity(new Intent(MedicalFiles.this,ProfilePanel.class));
+            startActivity(new Intent(UpdateMedicalData.this,ProfilePanel.class));
             finish();
         }
     }

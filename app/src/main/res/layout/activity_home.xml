@@ -8,6 +8,7 @@
     tools:context=".Home">
 
     <RelativeLayout
+        android:layout_marginTop="10dp"
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,7 +25,7 @@
         <Button
             android:id="@+id/button"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:text="@string/reg"
@@ -78,7 +79,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="20dp"
                     android:padding="5dp"
-                    android:text="@string/about"
+                    android:text="MediPass est une plateforme numérique révolutionnaire conçue pour simplifier et accélérer la collecte ainsi que le partage des données médicales cruciales en cas d\'urgence.Notre mission est de fournirune solution innovante qui garantit que les informations médicales essentielles soient accessibles rapidement et facilement lorsque chaque seconde compte."
                     android:textSize="16sp"
                     android:textStyle="normal" />
 
@@ -116,13 +117,13 @@
                 android:id="@+id/img_c"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
                 android:src="@drawable/img_12" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_marginTop="5dp">
+                android:gravity="center">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -153,16 +154,18 @@
                             android:textStyle="bold"
                             android:layout_marginBottom="8dp"/>
                         <ImageView
+                            android:id="@+id/ic1"
                             android:layout_width="30dp"
                             android:layout_height="25dp"
                             android:src="@drawable/img_10"
                             android:layout_alignParentEnd="true"/>
                         <TextView
+                            android:id="@+id/rp1"
                             android:layout_below="@id/q1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:visibility="visible"
-                            android:textColor="@color/white"
+                            android:visibility="gone"
+                            android:textColor="@color/black"
                             android:text="Créez votre profil : Téléchargez l'application MediPass et créez votre profil en quelques minutes.\nAjoutez vos données médicales : Renseignez vos antécédents médicaux, vos allergies, vos médicaments, vos contacts d'urgence et bien plus encore.
         \nPartagez vos données en cas d'urgence : En cas d'urgence, les professionnels de la santé pourront accéder à vos données médicales via l'application MediPass."
                             android:textSize="16sp"
@@ -183,16 +186,18 @@
                             android:textColor="@color/blue"
                             android:layout_marginBottom="8dp"/>
                         <ImageView
+                            android:id="@+id/ic2"
                             android:layout_width="30dp"
                             android:layout_height="25dp"
                             android:src="@drawable/img_10"
                             android:layout_alignParentEnd="true"/>
                         <TextView
+                            android:id="@+id/rp2"
                             android:layout_below="@id/q2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:visibility="gone"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:text="MediPass est une plateforme numérique qui facilite la collecte et le partage automatisés de vos données médicales en cas d'urgence."
                             android:textSize="16sp"
                             android:layout_marginBottom="16dp"/>
@@ -212,16 +217,18 @@
                             android:textColor="@color/blue"
                             android:layout_marginBottom="8dp"/>
                         <ImageView
+                            android:id="@+id/ic3"
                             android:layout_width="30dp"
                             android:layout_height="25dp"
                             android:src="@drawable/img_10"
                             android:layout_alignParentEnd="true"/>
                         <TextView
+                            android:id="@+id/rp3"
                             android:layout_below="@id/q3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:visibility="gone"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:text="MediPass est conçu pour tout le monde, quel que soit votre âge ou votre état de santé.
         L'application est particulièrement utile pour les personnes : Âgées Souffrant de maladies chroniques Ayant des allergies Prenant plusieurs médicaments Voyageant"
                             android:textSize="16sp"
@@ -242,16 +249,18 @@
                             android:textColor="@color/blue"
                             android:layout_marginBottom="8dp"/>
                         <ImageView
+                            android:id="@+id/ic4"
                             android:layout_width="30dp"
                             android:layout_height="25dp"
                             android:src="@drawable/img_10"
                             android:layout_alignParentEnd="true"/>
                         <TextView
+                            android:id="@+id/rp4"
                             android:layout_below="@id/q4"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:visibility="gone"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:text="Oui, MediPass est une application sécurisée qui utilise les dernières technologies de cryptage pour protéger vos données médicales."
                             android:textSize="16sp"
                             android:layout_marginBottom="16dp"/>
@@ -271,16 +280,18 @@
                             android:textColor="@color/blue"
                             android:layout_marginBottom="8dp"/>
                         <ImageView
+                            android:id="@+id/ic5"
                             android:layout_width="30dp"
                             android:layout_height="25dp"
                             android:src="@drawable/img_10"
                             android:layout_alignParentEnd="true"/>
                         <TextView
+                            android:id="@+id/rp5"
                             android:layout_below="@id/q5"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:visibility="gone"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:text="MediPass est un service gratuit pour les utilisateurs."
                             android:textSize="16sp"
                             android:layout_marginBottom="16dp"/>
@@ -300,16 +311,18 @@
                             android:textColor="@color/blue"
                             android:layout_marginBottom="8dp"/>
                         <ImageView
+                            android:id="@+id/ic6"
                             android:layout_width="30dp"
                             android:layout_height="25dp"
                             android:src="@drawable/img_10"
                             android:layout_alignParentEnd="true"/>
                         <TextView
+                            android:id="@+id/rp6"
                             android:layout_below="@id/q6"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:visibility="gone"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:text="Vous pouvez modifier vos données médicales à tout moment en vous connectant à votre compte MediPass."
                             android:textSize="16sp"
                             android:layout_marginBottom="16dp"/>
@@ -329,16 +342,18 @@
                             android:textColor="@color/blue"
                             android:layout_marginBottom="8dp"/>
                         <ImageView
+                            android:id="@+id/ic7"
                             android:layout_width="30dp"
                             android:layout_height="25dp"
                             android:src="@drawable/img_10"
                             android:layout_alignParentEnd="true"/>
                         <TextView
+                            android:id="@+id/rp7"
                             android:layout_below="@id/q7"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:visibility="gone"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:text="Vous pouvez modifier vos données médicales à tout moment en vous connectant à votre compte MediPass."
                             android:textSize="16sp"
                             android:layout_marginBottom="16dp"/>
@@ -349,11 +364,18 @@
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:gravity="center"
                 android:background="@drawable/frame_e"
-                android:layout_marginTop="5dp">
-
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Medipass"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="14dp"
+                    android:layout_centerHorizontal="true"/>
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>

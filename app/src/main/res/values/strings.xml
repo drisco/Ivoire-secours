@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">MediPass</string>
     <string name="textview">TextView</string>
-    <string name="account">Créer un compte</string>
+    <string name="account">Créer le compte</string>
     <string name="remember">Se souvenir de moi</string>
     <string name="save">Sauvegarder</string>
     <string name="annul">Annuler</string>
@@ -10,9 +10,6 @@
     <string name="reg">S\'inscrire</string>
     <string name="aboutus">A Propos de nous :</string>
     <string name="qr">Créez un code QR sécurisé pour vos données médicales.</string>
-    <string name="about">MediPass est une plateforme numérique révolutionnaire conçue pour simplifier et accélérer la collecte ainsi que le partage des données médicales cruciales en cas d\'urgence.
-        Notre mission est de fournirune solution innovante qui garantit que les informations médicales essentielles soient accessibles rapidement et facilement lorsque chaque seconde compte. </string>
-
     <string name="prenom">Prénom</string>
     <string name="hint_prenom">Saisir le prénom</string>
 

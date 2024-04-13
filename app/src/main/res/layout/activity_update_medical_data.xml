@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".PersonFiles">
+    tools:context=".UpdateMedicalData">
 
     <LinearLayout
         android:id="@+id/cvb1"
@@ -72,52 +72,6 @@
                 </RelativeLayout>
             </LinearLayout>
 
-            <RelativeLayout
-                android:id="@+id/ligne_b"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/ligne_a"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="15dp"
-                android:background="@color/white">
-
-                <LinearLayout
-                    android:id="@+id/linearLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:orientation="horizontal">
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        app:civ_border_width="4dp"
-                        android:id="@+id/user"
-                        android:layout_centerInParent="true"
-                        android:src="@drawable/profile"
-                        android:layout_marginStart="15dp"
-                        app:civ_border_color="#ffff"
-                        android:layout_width="85dp"
-                        android:layout_height="85dp"/>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginStart="10dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/username"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/hello"
-                            android:textColor="@color/blue"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
-                </LinearLayout>
-
-            </RelativeLayout>
 
         </RelativeLayout>
 
@@ -235,6 +189,7 @@
             android:id="@+id/dataUser"
             android:layout_below="@+id/ligne_d"
             android:layout_width="match_parent"
+            android:visibility="visible"
             android:paddingBottom="10dp"
             android:layout_height="match_parent">
 
@@ -855,61 +810,60 @@
 
                     </LinearLayout>
                 </LinearLayout>
-
             </LinearLayout>
         </ScrollView>
     </RelativeLayout>
 
-        <LinearLayout
-            android:id="@+id/cv1"
-            android:layout_alignParentBottom="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:elevation="1dp"
-            android:layout_marginEnd="25dp"
+    <LinearLayout
+        android:id="@+id/cv1"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:elevation="1dp"
+        android:layout_marginEnd="25dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="15dp"
+        android:orientation="horizontal">
+        <!-- Boutons d'annulation et de sauvegarde -->
+        <RelativeLayout
+            android:id="@+id/annulationbtn"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/rectangle_blanc">
+
+            <TextView
+                android:id="@+id/annuler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/annul"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/sauvegardebtn"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="15dp"
-            android:orientation="horizontal">
-            <!-- Boutons d'annulation et de sauvegarde -->
-            <RelativeLayout
-                android:id="@+id/annulationbtn"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:background="@drawable/rectangle_blanc">
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/rectangle_violet">
 
-                <TextView
-                    android:id="@+id/annuler"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="@string/annul"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-            </RelativeLayout>
-            <RelativeLayout
-                android:id="@+id/sauvegardebtn"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginStart="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/rectangle_violet">
-
-                <TextView
-                    android:id="@+id/suivant"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="Suivant"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-            </RelativeLayout>
-        </LinearLayout>
+            <TextView
+                android:id="@+id/suivant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Suivant"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </LinearLayout>
 
 
 

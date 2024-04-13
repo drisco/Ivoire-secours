@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <!-- Option Appareil photo -->
+    <ImageView
+        android:id="@+id/cameraOption"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/camera"
+        android:layout_margin="16dp"
+        android:clickable="true" />
+
+    <!-- Option Galerie -->
+    <ImageView
+        android:id="@+id/galleryOption"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/photo"
+        android:layout_margin="16dp"
+        android:clickable="true" />
+
+</LinearLayout>

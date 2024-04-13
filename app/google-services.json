@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1248452997",
+    "firebase_url": "https://dbmp-9ff78-default-rtdb.firebaseio.com",
+    "project_id": "dbmp-9ff78",
+    "storage_bucket": "dbmp-9ff78.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1248452997:android:4d289f888983f81eb7e4ec",
+        "android_client_info": {
+          "package_name": "com.example.medipass"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1248452997-h5se6rqq0f741nkpgb1rhe3e7obmkf9b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0bQnlp6j4fJ2ePJWQXomysBuc31xc_LA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1248452997-h5se6rqq0f741nkpgb1rhe3e7obmkf9b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

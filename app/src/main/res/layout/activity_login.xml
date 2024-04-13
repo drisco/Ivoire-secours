@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".RegisterInfo"
+    tools:context=".Login"
     android:gravity="center_vertical">
 
     <ImageView
@@ -34,7 +34,8 @@
             android:id="@+id/mail"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:ems="9"
+            android:ems="29"
+            android:paddingStart="10dp"
             android:inputType="textEmailAddress"
             android:layout_marginTop="10dp"
             android:background="@drawable/box_b" />
@@ -57,7 +58,8 @@
             android:id="@+id/pwd"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:ems="9"
+            android:ems="39"
+            android:paddingStart="10dp"
             android:inputType="textPassword"
             android:layout_marginTop="10dp"
             android:background="@drawable/box_b" />
@@ -75,7 +77,7 @@
         android:orientation="horizontal">
 
         <RelativeLayout
-            android:id="@+id/btn1"
+            android:id="@+id/btn1l"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
@@ -94,26 +96,14 @@
         </RelativeLayout>
 
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="10dp">
-        <CheckBox
-            android:id="@+id/remember"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/remember"
-            android:textSize="16sp"
-            android:textStyle="bold"/>
-    </LinearLayout>
+
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/emailLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:text="@string/gmail"
+        android:text="Cliquez moi pour creer un compte?"
         android:textStyle="bold"
         android:textSize="16sp"
         android:textColor="@color/violet"

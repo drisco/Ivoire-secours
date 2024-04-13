@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -15,8 +15,8 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="160dp"
+            android:layout_height="60dp"
             android:layout_centerVertical="true"
             android:layout_marginStart="10dp"
             android:src="@drawable/logo" />
@@ -29,12 +29,14 @@
             android:layout_marginEnd="10dp"
             android:gravity="center"
             android:orientation="horizontal">
-
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
+                app:civ_border_width="4dp"
                 android:id="@+id/userdashbord"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/img_5" />
+                android:layout_centerInParent="true"
+                android:src="@drawable/img_5"
+                app:civ_border_color="#ffff"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
 
             <TextView
                 android:id="@+id/session"
@@ -43,7 +45,7 @@
                 android:layout_marginStart="2dp"
                 android:text="@string/logout"
                 android:textColor="@color/blue"
-                android:textSize="8sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 tools:ignore="SmallSp" />
         </LinearLayout>
@@ -53,20 +55,18 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+        android:layout_centerVertical="true"
         app:srcCompat="@drawable/img_8" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
         android:gravity="center"
+        android:layout_marginBottom="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2">
 
@@ -81,7 +81,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="@string/annul"
+                android:text="Télécharger le PDF"
                 android:textSize="14sp"
                 android:textStyle="bold" />
         </RelativeLayout>
@@ -97,12 +97,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:padding="5dp"
                 android:layout_centerInParent="true"
-                android:text="Générer QR Code"
+                android:text="Télécharger le QR Code"
                 android:textColor="@color/white"
                 android:textSize="14sp"
                 android:textStyle="bold" />
         </RelativeLayout>
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
